@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Sheet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles for the Marksheet */
+        body {
+            background: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .marksheet-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .grade {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #f39c12;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #e74c3c;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .pass-message {
+            background-color: #2ecc71;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .marksheet-container {
+                width: 90%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">ASSIGNMENTS</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Ques1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Ques2.html">Ques2</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+    <div class="marksheet-container">
+        <h1>Mark Sheet</h1>
+        <div id="marks-details">
+            <!-- Dynamic content from JavaScript will go here -->
+        </div>
+    </div>
+
+    <script>
+        const totalMarks = 300;
+
+        let englishMarks = +prompt("Enter your English marks:");
+        let mathMarks = +prompt("Enter your Math marks:");
+        let urduMarks = +prompt("Enter your Urdu marks:");
+
+        let obtainedMarks = englishMarks + mathMarks + urduMarks;
+        let percentage = (obtainedMarks / totalMarks) * 100;
+
+        let grade =
+            percentage >= 90 ? 'A+' :
+            percentage >= 80 ? 'A' :
+            percentage >= 70 ? 'B' :
+            percentage >= 60 ? 'C' : 'F';
+
+        let message = grade === 'F' ?
+            "Unfortunately, you have failed. Please work harder next time!" :
+            `Congratulations! You have passed with a grade of ${grade}.`;
+
+        let gradeClass = grade === 'F' ? 'message' : 'pass-message';
+
+        document.getElementById('marks-details').innerHTML = `
+            <p><strong>English Marks:</strong> ${englishMarks}</p>
+            <p><strong>Math Marks:</strong> ${mathMarks}</p>
+            <p><strong>Urdu Marks:</strong> ${urduMarks}</p>
+            <p><strong>Total Obtained Marks:</strong> ${obtainedMarks} / ${totalMarks}</p>
+            <p><strong>Grade:</strong> <span class="grade">${grade}</span></p>
+            <p class="${gradeClass}">${message}</p>
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Gradient background */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #495057;
+}
+
+/* Form Card Styles */
+.card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Input and Button Styles */
+.form-select.custom-select {
+    border-radius: 25px;
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.form-select.custom-select:focus {
+    border-color: #6f42c1; /* Purple color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+}
+
+button {
+    background: linear-gradient(135deg, #6f42c1, #8360c3); /* Beautiful gradient */
+    border: none;
+    color: #fff;
+    border-radius: 30px;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #5a318f, #6f42c1);
+}
+
+button:active {
+    transform: translateY(0);
+    background: linear-gradient(135deg, #6f42c1, #8360c3);
+}
+
+/* Custom Card for Models */
+.card-model {
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-model:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-model img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+}
+
+.card-model .card-body {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 2px solid #ddd;
+}
+
+.card-model .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-model .card-text {
+    font-size: 1rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%; /* Full-width on smaller screens */
+    }
+
+    .card-model {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Custom Gradient Buttons */
+.btn-gradient {
+    background: linear-gradient(135deg, #6f42c1, #8360c3);
+    border-radius: 25px;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(135deg, #5a318f, #6f42c1);
+}
